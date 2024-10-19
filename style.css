@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.8;
+    transition: background-color 0.3s ease-in-out;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+button, a {
+    text-decoration: none;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 1s ease-out;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    animation: fadeDiagonal 6s linear infinite;
+}
+
+@keyframes fadeDiagonal {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+header p.role {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: fadeInUp 2s ease-in;
+}
+
+.contact-info a {
+    margin: 0 10px;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background 0.3s ease, color 0.3s ease;
+    animation: fadeInUp 2.5s ease-in;
+}
+
+.contact-info a:hover {
+    background: white;
+    color: #6a11cb;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+}
+
+h2 {
+    color: #6a11cb;
+    font-size: 2em;
+    border-bottom: 3px solid #2575fc;
+    margin-bottom: 15px;
+}
+
+/* On Scroll Animation for Cards */
+.card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Hover Effects */
+.card:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #6a11cb;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    animation: fadeIn 1s ease-in;
+}
